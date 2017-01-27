@@ -23,11 +23,14 @@
 
 
 
-# First we hve to check what terminal we are using. Whiptail/newt has a bug that prevents the --infobox option from working correctly in xterm.
+# First we have to include the newt-display library
 
-if [ $TERM == xterm  ]
-then
-	WHIPBUG=1
-fi
+source newt-display.sh
 
-# Next we want to set a few functions to make drawing windows easier.
+# Let's make a splash screen
+
+wInfoBox "IBS Integrated Build System version 0.1" "Startup" "IBS Integrated Build System\n(C) Copyright 2017 Keagan Winterthieme." 8 50 clear
+
+sleep 3s
+
+exit 0

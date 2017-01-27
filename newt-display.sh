@@ -38,18 +38,29 @@ fi
 # Function wInfoBox expects arguments in order: backtitle, title, text for box, height of dialog, width of dialog.
 function wInfoBox() {
 
+if [ -z $6 ]
+then
+	clear
+fi
+
 if [ -n $WHIPBUG ]
 then
-	WHIPCMD="TERM=v220 whiptail"
+        TERM=vt220
+        whiptail --backtitle "$1" --title "$2" --infobox "$3" "$4" "$5"
 else
-	WHIPCMD="whiptail"
+        whiptail --backtitle $1 --title $2 --infobox $3 $4 $5
 fi
+
+}
+
+# Function wMsgBox expects arguments in order: backtitle, title, text for box, height of dialog, width of dialog.
+function wMsgBox() {
 
 if [ -z $6 ]
 then
 	clear
 fi
 
-$WHIPCMD --backtitle $1 --title $2 --infobox $3 $4 $5
+whiptail --backtitle "$1" --title "$2" --msgbox "$3" "$4" "$5"
 
 }
