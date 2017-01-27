@@ -21,5 +21,13 @@
 # 	enable easier building of the LibraNix operating system and ensuring all
 #	team members are using the same options.
 
-# Paint a splash screen to welcome the user.
 
+
+# First we hve to check what terminal we are using. Whiptail/newt has a bug that prevents the --infobox option from working correctly in xterm.
+
+if [ $TERM == xterm  ]
+then
+	WHIPBUG=1
+fi
+
+# Next we want to set a few functions to make drawing windows easier.
