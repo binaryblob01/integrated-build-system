@@ -48,12 +48,13 @@ then
         TERM=vt220
         whiptail --backtitle "$1" --title "$2" --infobox "$3" "$4" "$5"
 else
-        whiptail --backtitle $1 --title $2 --infobox $3 $4 $5
+        whiptail --backtitle "$1" --title "$2" --infobox "$3" "$4" "$5"
 fi
 
 }
 
-# Function wMsgBox expects arguments in order: backtitle, title, text for box, height of dialog, width of dialog.
+# Function wMsgBox expects arguments in order: backtitle, title, text for box, height of dialog, width of dialog. If user wants screen cleared
+# before opening dialog, sixth parameter should be "clear".
 function wMsgBox() {
 
 if [ -z $6 ]
