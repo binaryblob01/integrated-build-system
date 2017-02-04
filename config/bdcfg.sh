@@ -49,7 +49,7 @@ fi
 
 # Lets create the main menu
 
-whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose item to configure" 25 75 15 \
+whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose item to configure" --menu "What option would you like to configure?" 25 75 15 \
 "setproj" "Set Project Directory" \
 "setthread" "Set number of CPU threads to use" \
 "setlog" "Set logging level" \
