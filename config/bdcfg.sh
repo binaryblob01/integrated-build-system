@@ -54,7 +54,7 @@ whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title 
 "setthread" "Set number of CPU threads to use" \
 "setlog" "Set logging level" \
 "setpfx" "Set default prefix" \
-"return" "Return to configuration path menu"
+"return" "Return to configuration path menu"\
 2> /tmp/ibs/config/bldcfg/menuselectBC1
 
 if [ `cat /tmp/ibs/config/bldcfg/menuselectBC1` == return ];then
