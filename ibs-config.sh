@@ -47,18 +47,34 @@ then
 	touch /tmp/ibs/config/menuselectC1
 fi
 
-# Now we need to build the main menu that allows the user to select what configuration path to follow
+# Now we need to build the main menu that allows the user to select what configuration path to follow. For some odd reason this menu has a bug
+# that prevents it from displaying correctly.
 
-whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose Configuration Path" --menu "What configuration path would you like to follow?" 25 75 15 \
-"ibscfg" "Configure IBS" \
-"genbdcfg" "General Build Configuration Options" \
-"srccfg" "Configure source acquisition" \
-"bsyscfg" "Configure build system for base system build" \
-"isocfg" "Configure build system for ISO build" \
-"prgcfg" "Configure build system for individual program build" \
-"rpmpcfg" "Configure build system for RPM package build" \
-"return" "Return to Main Menu" \
-2> /tmp/ibs/config/menuselectC1
+if [ -n $WHIPBUG ]
+then
+	TERM=vt220
+	whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose Configuration Path" --menu "What configuration path would you like to follow?" 25 75 15 \
+	"ibscfg" "Configure IBS" \
+	"genbdcfg" "General Build Configuration Options" \
+	"srccfg" "Configure source acquisition" \
+	"bsyscfg" "Configure build system for base system build" \
+	"isocfg" "Configure build system for ISO build" \
+	"prgcfg" "Configure build system for individual program build" \
+	"rpmpcfg" "Configure build system for RPM package build" \
+	"return" "Return to Main Menu" \
+	2> /tmp/ibs/config/menuselectC1
+else
+	whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose Configuration Path" --menu "What configuration path would you like to follow?" 25 75 15 \
+	"ibscfg" "Configure IBS" \
+	"genbdcfg" "General Build Configuration Options" \
+	"srccfg" "Configure source acquisition" \
+	"bsyscfg" "Configure build system for base system build" \
+	"isocfg" "Configure build system for ISO build" \
+	"prgcfg" "Configure build system for individual program build" \
+	"rpmpcfg" "Configure build system for RPM package build" \
+	"return" "Return to Main Menu" \
+	2> /tmp/ibs/config/menuselectC1
+fi
 
 if [ `cat /tmp/ibs/config/menuselectC1` == return ];then
 	bash /opt/ibs/ibs.sh --quiet
