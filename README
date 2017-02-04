@@ -1,0 +1,6 @@
+IBS is the Integrated Build System for the LibraNix operating system. It is designed to make configuring and compiling software from source easier,
+but more importantly uniform across a large team.
+
+IBS always assumes it has been installed in /opt/ibs.
+
+Some components very well can be used cross-platform (such as buildling individual programs), however IBS is designed with LibraNix as it's main platform.

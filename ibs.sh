@@ -29,7 +29,7 @@ source newt-display.sh
 
 # Set the IBS version
 
-IBSV="0.1"
+IBSV="`cat /opt/ibs/release`"
 
 # Since we may want to launch the menu without a splash screen, let's set a command line option.
 
