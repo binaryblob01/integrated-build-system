@@ -34,6 +34,7 @@ then
 	rm -rf /tmp/ibs/config
 	rm -rf /tmp/ibs/config
 	rm -rf /tmp/ibs/config
+	mkdir /tmp/ibs/config
 	touch /tmp/ibs/config/menuselectC1
 fi
 

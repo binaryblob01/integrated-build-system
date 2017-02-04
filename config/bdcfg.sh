@@ -34,6 +34,7 @@ then
 	rm -rf /tmp/ibs/config/bldcfg
 	rm -rf /tmp/ibs/config/bldcfg
 	rm -rf /tmp/ibs/config/bldcfg
+	mkdir /tmp/ibs/config/bldcfg
 	touch /tmp/ibs/config/bldcfg/menuselectBC1
 fi
 
