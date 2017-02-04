@@ -81,7 +81,9 @@ elif [ `cat /tmp/ibs/main/menuselect01` == config ];then
 	bash ibs-config.sh
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == build ];then
-	bash ibs-build.sh
+	wInfoBox "IBS Integrated Biuld System version `echo $IBSV`" "Error" "Function not implemented yet" 7 40
+	sleep 2s
+	bash ibs.sh --quiet
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == wizard ];then
 	wInfoBox "IBS Integrated Biuld System version `echo $IBSV`" "Error" "Function not implemented yet" 7 40
