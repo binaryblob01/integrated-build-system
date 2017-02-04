@@ -31,7 +31,7 @@ source newt-display.sh
 IBSV="`cat /opt/ibs/release`"
 
 # Let's do some setup and cleanup work quick
-# Check for existing config temporary directory. If it doesn't exist, create it. If it exists, cleanup the "main" section.
+# Check for existing config temporary directory. If it doesn't exist, create it. If it exists, cleanup the "config" section.
 
 if [ -d "/tmp/ibs/config" ]
 then
@@ -61,10 +61,10 @@ whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title 
 2> /tmp/ibs/config/menuselectC1
 
 if [ `cat /tmp/ibs/config/menuselectC1` == return ];then
-	bash ibs.sh --quiet
+	bash /opt/ibs/ibs.sh --quiet
 	exit 0
 elif [ `cat /tmp/ibs/config/menuselectC1` == ibscfg ];then
-	bash config-ibscfg.sh
+	bash /opt/ibs/config-ibscfg.sh
 	exit 0
 elif [ `cat /tmp/ibs/config/menuselectC1` == genbdcfg ];then
 	bash /opt/ibs/config/bdcfg.sh

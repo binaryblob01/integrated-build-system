@@ -75,20 +75,20 @@ if [ `cat /tmp/ibs/main/menuselect01` == exit ];then
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == about ];then
 	wMsgBox "IBS Integrated Build System version `echo $IBSV`" "About IBS" "IBS version `echo $IBSV`, (C) 2017 Keagan Winterthieme.\nIBS is designed to simplify and unify\nthe buildling and development of the\nLibraNix Operating System.\nSuggestions and bug reports can be sent to\nKeagan Winterthieme <hopefullifetwo@gmail.com>" 12 53 clear
-	bash ibs.sh --quiet
+	bash /opt/ibs/ibs.sh --quiet
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == config ];then
-	bash ibs-config.sh
+	bash /opt/ibs/ibs-config.sh
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == build ];then
 	wInfoBox "IBS Integrated Biuld System version `echo $IBSV`" "Error" "Function not implemented yet" 7 40
 	sleep 2s
-	bash ibs.sh --quiet
+	bash /opt/ibs/ibs.sh --quiet
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == wizard ];then
 	wInfoBox "IBS Integrated Biuld System version `echo $IBSV`" "Error" "Function not implemented yet" 7 40
 	sleep 2s
-	bash ibs.sh --quiet
+	bash /opt/ibs/ibs.sh --quiet
 	exit 0
 elif [ `cat /tmp/ibs/main/menuselect01` == iso ];then
 	echo ""
