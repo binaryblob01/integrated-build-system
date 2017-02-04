@@ -31,9 +31,9 @@ IBSV="`cat /opt/ibs/release`"
 
 if [ -d "/tmp/ibs/config" ]
 then
-	rm -rf /tmp/ibs/config/*
-	rm -rf /tmp/ibs/config/*.*
-	rm -rf /tmp/ibs/config/.*
+	rm -rf /tmp/ibs/config
+	rm -rf /tmp/ibs/config
+	rm -rf /tmp/ibs/config
 	touch /tmp/ibs/config/menuselectC1
 fi
 

@@ -22,10 +22,6 @@
 #	team members are using the same options.
 
 
-# First we have to include the newt-display library
-
-source newt-display.sh
-
 # Set the IBS version
 
 IBSV="`cat /opt/ibs/release`"
@@ -35,9 +31,9 @@ IBSV="`cat /opt/ibs/release`"
 
 if [ -d "/tmp/ibs/config/bldcfg" ]
 then
-	rm -rf /tmp/ibs/config/bldcfg/*
-	rm -rf /tmp/ibs/config/bldcfg/*.*
-	rm -rf /tmp/ibs/config/bldcfg/.*
+	rm -rf /tmp/ibs/config/bldcfg
+	rm -rf /tmp/ibs/config/bldcfg
+	rm -rf /tmp/ibs/config/bldcfg
 	touch /tmp/ibs/config/bldcfg/menuselectBC1
 fi
 
@@ -49,13 +45,13 @@ fi
 
 # Lets create the main menu
 
-whiptail --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose item to configure" --menu "What option would you like to configure?" 25 75 15 \
+dialog --backtitle "IBS Integrated Build System version `echo $IBSV`" --title "Choose item to configure" --menu "What option would you like to configure?" 25 75 15 \
 "setproj" "Set Project Directory" \
 "setthread" "Set number of CPU threads to use" \
 "setlog" "Set logging level" \
 "setpfx" "Set default prefix" \
 "return" "Return to configuration path menu"\
-2> /tmp/ibs/config/bldcfg/menuselectBC1
+> /tmp/ibs/config/bldcfg/menuselectBC1
 
 if [ `cat /tmp/ibs/config/bldcfg/menuselectBC1` == return ];then
 	bash /opt/ibs/ibs-config.sh --quiet
