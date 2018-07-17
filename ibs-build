@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# (C) Copyright 2017 Keagan Winterthieme <hopefullifetwo@gmail.com>
+# (C) Copyright 2018 Alec Bloss <hopefullifetwo@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
